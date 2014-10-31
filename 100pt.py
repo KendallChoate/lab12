@@ -26,7 +26,7 @@ class MyApp:
 		self.button1.pack(side=LEFT)
 		
 	        # Add a second button!
-				
+		# Second button called "Right"		
 						
 		self.button1.bind("<Button-1>", self.button1Click) 
 		drawpad.pack(side=BOTTOM)
