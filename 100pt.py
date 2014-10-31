@@ -20,20 +20,36 @@ class MyApp:
 		self.myParent = parent  
 		self.myContainer1 = Frame(parent)
 		self.myContainer1.pack()
+		#Added more buttoninformation
+		self.myContainer2 = Frame(parent)
+		self.myContainer2.pack()
 		
 		self.button1 = Button(self.myContainer1)
 		self.button1.configure(text="Left", background= "green")
 		self.button1.pack(side=LEFT)
 		
 	        # Add a second button!
-		# Second button called "Right"		
+		# Added second button called "Right"	
+		
+		self.button2 = Button(self.myContainer2)
+		self.button2.configure(text="Right", background= "cyan")
+		self.button2.pack(side=LEFT)		
 						
 		self.button1.bind("<Button-1>", self.button1Click) 
 		drawpad.pack(side=BOTTOM)
-		
+		# Added button2 information
+		self.button2.bind("<Button-1>", self.button2Click) 
+		drawpad.pack(side=BOTTOM)
 
 		
 	def button1Click(self, event):   
+		# Make me move to the left!
+		global oval
+		x1, y1, x2, y2 = drawpad.coords(oval)
+		if self.button1["background"] == "green": ### (4)
+		      direction = 5
+		global drawpad
+	def button2Click(self, event):   
 		# Make me move to the left!
 		global oval
 		global drawpad
