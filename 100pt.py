@@ -13,7 +13,7 @@ root = Tk()
 
 drawpad = Canvas(root, width=480,height=320, background='white')
 oval = drawpad.create_oval(160,160,320,320, fill="red")
-
+direction = 1
 class MyApp:
 	def __init__(self, parent):
 	        global drawpad
@@ -45,17 +45,27 @@ class MyApp:
 	def button1Click(self, event):   
 		# Make me move to the left!
 		global oval
+		# Adding coordinates and moving instructions
 		x1, y1, x2, y2 = drawpad.coords(oval)
 		if self.button1["background"] == "green": ### (4)
+		      direction = 1
+		else:
 		      direction = 5
 		global drawpad
 	def button2Click(self, event):   
 		# Make me move to the left!
 		global oval
+		x1, y1, x2, y2 = drawpad.coords(oval)
+		if self.button2["background"] == "cyan": ### (4)
+		      direction = 1
+		else:
+		      direction = -5
 		global drawpad
 	
 	# Add the event handler for the second button!
-	
-		
+
+#__init__()	
+#button1Click()
+#button2Click()		
 myapp = MyApp(root)
 root.mainloop()
