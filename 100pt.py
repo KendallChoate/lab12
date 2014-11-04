@@ -20,7 +20,7 @@ class MyApp:
 		self.myParent = parent  
 		self.myContainer1 = Frame(parent)
 		self.myContainer1.pack()
-		#Added more buttoninformation
+		#Added more button information
 		self.myContainer2 = Frame(parent)
 		self.myContainer2.pack()
 		
@@ -43,26 +43,19 @@ class MyApp:
 
 		
 	def button1Click(self, event):   
-		# Make me move to the left!
+		# Move to the left
 		global oval
-		# Adding coordinates and moving instructions
-		x1, y1, x2, y2 = drawpad.coords(oval)
-		if self.button1["background"] == "green": ### (4)
-		      direction = 1
-		else:
-		      direction = 5
 		global drawpad
-	def button2Click(self, event):   
-		# Make me move to the left!
-		global oval
-		x1, y1, x2, y2 = drawpad.coords(oval)
-		if self.button2["background"] == "cyan": ### (4)
-		      direction = 1
-		else:
-		      direction = -5
-		global drawpad
+		drawpad.move(oval, -10, 0)
+		
+	# Add the event handler for the second button!	
 	
-	# Add the event handler for the second button!
+	def button2Click(self, event):   
+		# Move to the right
+		global oval
+		global drawpad
+	        drawpad.move(oval, 10, 0)
+	
 
 #__init__()	
 #button1Click()
